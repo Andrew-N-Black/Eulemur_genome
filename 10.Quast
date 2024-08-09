@@ -1,1 +1,10 @@
-blah
+#!/bin/bash
+#SBATCH --mem=40G
+#SBATCH -p core
+#SBATCH -A core
+#SBATCH -w jackson
+#SBATCH --error=met.err
+#SBATCH --output=met.o
+#SBATCH --job-name=metric
+
+quast.py -o quast_out_FINAL/ E_rufifrons_noMT.fna
