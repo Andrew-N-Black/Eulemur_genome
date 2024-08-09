@@ -1,0 +1,4 @@
+#To convert the gfa file (which contains information about which read was assembled into each contig) to fasta format the following command was run:
+
+awk '/^S/{print ">"$2;print $3}' lemur_hifiasm_default_wHiC.asm.hic.hap1.p_ctg.gfa > lemur_hifiasm_default_wHiC.asm.hic.hap1.p_ctg.fasta
+
