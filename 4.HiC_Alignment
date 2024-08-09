@@ -1,0 +1,2 @@
+bwa index -a bwtsw ./lemur_hifiasm_default_wHiC.asm.hic.hap1.p_ctg.fasta
+bwa mem -5SP lemur_hifiasm_default_wHiC.asm.hic.hap1.p_ctg.fasta ../../../raw/HiC/7696/RedBay_S1_L001_R1_001.fastq.gz  ../../../raw/HiC/7696/RedBay_S1_L001_R2_001.fastq.gz -t 20 | ./samblaster | samtools view -S -h -b -F 2316 -@ 20 -q 20 > aligned.bam
