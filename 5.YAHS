@@ -1,0 +1,1 @@
+SGE_Batch -c "yahs ./lemur_hifiasm_default_wHiC.asm.hic.hap1.p_ctg.fasta aligned.bam" -r HiC_scaff -f 100G -q fast@chrom1
