@@ -1,0 +1,14 @@
+#!/bin/bash
+#SBATCH -p core
+#SBATCH -A core
+#SBATCH -w jackson
+#SBATCH --error=busco.err
+#SBATCH --output=busco.out
+#SBATCH --job-name=busco
+#SBATCH --mem=50G
+#SBATCH -n 20
+
+source /local/cluster/busco/activate.sh
+busco -i GCF_020740605.2_mLemCat1.pri_genomic.fna -l ./busco_downloads/lineages/primates_odb10 -o busco_lemcat -m geno -f --offline -c 20
+busco -i GCA_028534055.1_Eulemur_mongoz_HiC_genomic.fna -l ./busco_downloads/lineages/primates_odb10 -o Eulemur_mongoz -m geno -f --offline -c 20
+busco -i E_rufifrons_noMT.fna -l ./busco_downloads/lineages/primates_odb10 -c 20 -o Eulemur_rufifrons -m geno -f --offline
