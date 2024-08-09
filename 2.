@@ -1,0 +1,3 @@
+#HiC assisted Hifi assembly conducted using hifiasm
+SGE_Batch -c " hifiasm -t 20 -o ../hifiasm_out/lemur_hifiasm_default_wHiC.asm --h1 ../../raw/HiC/7696/RedBay_S1_L001_R1_001.fastq.gz --h2 ../../raw/HiC/7696/RedBay_S1_L001_R2_001.fastq.gz lemur_cleaned_6cells.fastq" -q fast@chrom1 -P 20 -f 100G -r default_assembly_wHiC
+
