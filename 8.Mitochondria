@@ -1,0 +1,10 @@
+ #!/bin/bash
+#SBATCH -A jackson
+#SBATCH -p jackson
+#SBATCH -n 4
+#SBATCH --mem=40G
+#SBATCH --error=mito.err
+#SBATCH --output=mito.out
+#SBATCH --job-name=reconstruct_mito_lemur
+
+/usr/bin/singularity exec -B $PWD,/scratch,/scratch:/tmp,$PWD/hiC_processing/yahs/,$PWD/hifi_q20 /local/cluster/singularity-images/singularity3/mitohifi.sif mitohifi.py -c hiC_processing/yahs/yahs.out_scaffolds_final.fa -t 4 -f hiC_processing/ring_lemur_MT.fasta -g hiC_processing/ring.gb -o 2 -d
