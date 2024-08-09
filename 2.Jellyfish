@@ -1,0 +1,6 @@
+#Kmer count
+jellyfish count -t 30 -C -m 60 -s 40G -o 60mer_out --min-qual-char=? lemur_cleaned_6cells.fastq
+
+#Generate histogram
+jellyfish histo -o 60mer_out.histo 60mer_out
+
